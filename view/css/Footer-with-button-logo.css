@@ -1,0 +1,20 @@
+#myFooter {
+    background-color: #000000;
+    color: white;
+    padding-top: 15px;
+}
+
+#footer {
+    background-color:black;
+    color:white;
+    clear:both;
+    position:fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+	width: 100%;
+	
+	
+	
+}
