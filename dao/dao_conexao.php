@@ -2,13 +2,14 @@
 	$servidor = "localhost";
 	$usuario = "root";
 	$senha = "";
-	$dbname = "exemplo";
+	$dbname = "mydb";
 	
 	//Criar a conexao
-	$conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
+	 $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
 
 	function conecta()
-  {
+  { 
+
     /*
       *Variáveis par conectar ao banco de dados
       *Xampp e Wampp geralmente a variável password será vazia ''
@@ -22,4 +23,15 @@
     return new PDO("mysql:host=$servidor;dbname=$dbname",$usuario,$senha);
 	*/
 	return $conn;
+  }
+  
+   function conexao(){
+   $servidor = "localhost";
+	$usuario = "root";
+	$senha = "";
+	$dbname = "mydb";
+	  $con = null;
+	  $con = mysqli_connect($servidor, $usuario, $senha, $dbname);
+	  
+	  return $con;
   }
