@@ -37,28 +37,28 @@
 chdir('/var/www/');
 echo realpath('./../../view/view_index.php');
 ?>
-
+			  
 			 ">Home
                 <span class="sr-only">(current)</span>
               </a>
             </li>
-
+            
             <li class="nav-item">
             </li>
-
-
+            
+            
 
 
              <?php
-
-
-
+  
+  
+  
 if(!empty($_SESSION['id']) && $_SESSION['tipo']= 'administrador'){?>
 <li class="nav-item">
 <a class="nav-link" href="view/view_administrador.php">
 	<?php
 	 echo "Olá ".$_SESSION['nome']." <br>";
-
+	 
 	?>
 </a>
 </li>
@@ -66,29 +66,24 @@ if(!empty($_SESSION['id']) && $_SESSION['tipo']= 'administrador'){?>
  <?php
 }
  else{
-
-
- ?>
-
+	
+       
+ ?> 
+ 
  <li class="nav-item">
-        <a class="nav-link" href="view/view_login.php">
-        <span class="glyphicon glyphicon-user"></span> Entrar </li></a>
+              <a class="nav-link" href="view/view_login.php">
+			 	
+			  <span class="glyphicon glyphicon-user"></span> Entrar </li></a>
 			  <li class="nav-item">
-          <a class="nav-link" href="cadastrar.php">
-          <span class="glyphicon glyphicon-user"></span> Registrar-se</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="view/view_cadastrar_variaveis.php">
-            <span class="glyphicon glyphicon-user"></span> Cadastro de Variáveis</a>
-        </li>
-
-
+              <a class="nav-link" href="cadastrar.php"> <span class="glyphicon glyphicon-user"></span> Registrar-se</a>
+            </li>
+ 
   <?php
  }
-
+ 
  ?>
 
-
+            
           </ul>
         </div>
       </div>
@@ -102,7 +97,7 @@ if(!empty($_SESSION['id']) && $_SESSION['tipo']= 'administrador'){?>
         <h1 class="display-3">Bem Vindo!</h1>
         <p class="lead">JEC</p>
         <a href="registro.jsp" class="btn btn-primary btn-lg">
-
+   
 
         Registrar</a>
       </header>
@@ -110,7 +105,7 @@ if(!empty($_SESSION['id']) && $_SESSION['tipo']= 'administrador'){?>
       <!-- Page Features -->
       <div class="row text-center">
 
-
+          
         <div class="col-lg-3 col-md-6 mb-4">
           <div class="card">
             <img class="card-img-top" src="http://placehold.it/500x325" alt="">
@@ -122,9 +117,9 @@ if(!empty($_SESSION['id']) && $_SESSION['tipo']= 'administrador'){?>
               <a class="btn btn-success" href="PesquisaProvaController?acao=visualizarProva&id=${prova.id}" >Mais informações</a>
           </div>
         </div>
-
+          
         </div>
-
+          
 
       </div>
       <!-- /.row -->
@@ -138,13 +133,13 @@ if(!empty($_SESSION['id']) && $_SESSION['tipo']= 'administrador'){?>
       <b>Versão</b> 1.0
     </div>
     <strong>Copyright &copy; 2018  Instituto Federal do Sudeste de Minas Gerais- Campus Juiz de Fora </strong> Todos os direitos reservados
-
+    
   </footer>
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+	
 
   </body>
 
