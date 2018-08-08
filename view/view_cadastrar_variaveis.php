@@ -1,5 +1,6 @@
 
 <!DOCTYPE html>
+
 <html lang="pt-br">
 
     <head>
@@ -55,9 +56,7 @@
 
         <div class="container">
             <div class="card card-login mx-auto mt-5 col-sm-4">
-              <?php  if($_SESSION['msg']='Login e senha incorreto!'  ){
 
-			  ?>
                 <div class="alert alert-danger alert-dismissable">
 
                     <strong> </strong>
@@ -65,16 +64,12 @@
 
 
                 </div>
-             <?php
-
-			  }
-               ?>
 
 
 
         <div class="card-header">Área de cadastro</div>
             <div class="card-body">
-                <form name = "signup" method="post" action="cadastrando_variaveis.php" >
+                <form name = "signup" method="POST" action="cadastrando_variaveis.php?idioma= $_GET['idioma']">
             <div class="form-group">
                 <label>Tipo de Variável</label><br>
                     <input type="radio" name="tipo" />Interna<br>
@@ -87,10 +82,6 @@
             <div class="form-group">
                 <label>Nome em inglês</label><br>
                     <input class="form-control" type="text" name="ing_nome" placeholder="Digite o nome da variável em inglês"/>
-            </div>
-            <div class="form-group">
-                <label>Fórmula</label><br>
-                    <input class="form-control" type="text" name="formula" placeholder="Digite a fórmula"/>
             </div>
             <div class="form-group">
                 <label>Visibilidade</label><br>
