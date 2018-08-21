@@ -1,9 +1,6 @@
 
-<?php
-
-
-?>
 <!DOCTYPE html>
+
 <html lang="pt-br">
 
     <head>
@@ -20,6 +17,18 @@
         <!-- Custom styles for this template-->
         <link href="css/sb-admin.css" rel="stylesheet">
 		
+		        <!-- Link da Tradução Dos Idiomas Ingles/Portugues API GOOGLE-->
+		<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'pt', includedLanguages: 'en,es,pt', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+		<script type="text/javascript" src="http://cdn.howcode.org/content/static/javascript/jquery.min.js"></script>
+		<script src="http://cdn.howcode.org/content/static/javascript/jquery.cookie.js"></script>	
+ <style type="text/css">
+ .goog-te-banner-frame.skiptranslate{display:none!important;}body{top:0px!important;}
+ 
+ </style>
     </head>
 
     <body class="bg-dark">

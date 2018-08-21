@@ -45,16 +45,19 @@ class CenarioDao{
 	 $conexao = $database->Conectar();
 	  //Inicio da Transação;
 	 $conexao ->beginTransaction();
-      $sql = "DELETE FROM cenarios WHERE idCENARIOS = :id";
-  
-            
-    $stmp = $conexao->prepare($sql);
-	$stmp->bindValue(':id',$id,PDO::PARAM_INT);
-    $resultado = $stmp->execute();
-  if(!$resultado)	{
-		die("<p>Erro da remover o Cenário</p>");
-		
-	}
+	 
+
+    $sql = "DELETE FROM cenarios WHERE idCENARIOS = :id";
+	 //preparaçao da execução da query jogos 
+	$stmp = $conexao->prepare($sql); 
+    $stmp->bindValue(':id',$id,PDO::PARAM_INT);
+    $resultado =  $stmp->execute();
+
+    if(!$resultado){
+          //$conexao->rollback(); //Desfaz a inserção na tabela de movimentos em caso de erro na query da tabela conta */
+          die ("<p>Erro da remover o Cenário kk</p>");
+
+	}	
    $conexao->commit();
     
     //return $resultado;	
@@ -87,7 +90,28 @@ class CenarioDao{
 	}
    // return $resultado;
 	
+public function retornaCenario($id){
 
+	   $database = new Database();
+	  
+	  
+	 $conexao = $database->Conectar();
+	  //Inicio da Transação;
+	 $conexao ->beginTransaction();
+      $sql = "SELECT * FROM cenarios WHERE idCENARIOS = :id";
+  
+            
+    $stmp = $conexao->prepare($sql);
+	$stmp->bindValue(':id',$id,PDO::PARAM_INT);
+    $resultado = $stmp->execute();
+  if(!$resultado)	{
+		die("<p>Erro  ao retornar Cenário</p>");
+		
+	}
+   $conexao->commit();
+    
+    //return $resultado;	
 
+}
 
 }

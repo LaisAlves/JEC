@@ -2,7 +2,9 @@
 
 <html>
 <head>
-
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   
@@ -30,16 +32,30 @@
   <!-- Bootstrap 3.3.7 -->
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- Morris.js charts -->
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.min.js"></script>
 <script src="bower_components/raphael/raphael.min.js"></script>
 <script src="bower_components/morris.js/morris.min.js"></script>
 <!-- Sparkline -->
 <script src="bower_components/jquery-sparkline/dist/jquery.sp">
-<!-- AdminLTE App -->
-<script src="dist/js/adminlte.min.js"></script>
+
+<script src="dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
+<!-- Link da Tradução Dos Idiomas Ingles/Portugues API GOOGLE-->
+		<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'pt', includedLanguages: 'en,es,pt', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+		<script type="text/javascript" src="http://cdn.howcode.org/content/static/javascript/jquery.min.js"></script>
+		<script src="http://cdn.howcode.org/content/static/javascript/jquery.cookie.js"></script>	
+ <style type="text/css">
+ .goog-te-banner-frame.skiptranslate{display:none!important;}body{top:0px!important;}
+ 
+ </style>
 <?php
 session_start();
 
@@ -158,6 +174,7 @@ $conn = conexao();
 $query = "SELECT * FROM cenarios";
 $result = mysqli_query($conn,$query);
  /*Executa o comando SQL, no caso para pegar todos os usuarios do sistema e retorna o valor da consulta em uma variavel ($res)  */
+
 echo"<div class=container>";
 echo " <div class=row>";
 
@@ -168,8 +185,8 @@ echo "
                     <thead>
                     <tr>
 
-                        <th>Nome Em Português</th>
-                        <th>Descricao em Portugues</th>
+                        <th>Descrição Em Português</th>
+                        <th>Descricao Em Inglês</th>
 						<th></th>
                        
                     </tr>
@@ -185,9 +202,22 @@ while($escrever=mysqli_fetch_assoc($result)){
 /*Escreve cada linha da tabela*/
 
 echo "<tr><td>" . $escrever['PORT_DESCRICAO'] . "</td><td>" . $escrever['ING_DESCRICAO'] . "</td><td>";
-echo "  <td><a href=../CenarioController.php?acao=editar&id=".$escrever['idCENARIOS']." class=btn btn-outline-success >Editar</a></td>
-            <td><a  href =../CenarioController.php?acao=excluir&id=".$escrever['idCENARIOS']."   class= btn btn-outline-danger >Excluir</a></td>";
 
+echo "<td><a class=btn btn-outline-success  href =../CenarioController.php?acao=excluir&id=".$escrever['idCENARIOS'].">Excluir</a></td>";
+
+echo "  <td>
+  <form action=view_editar_cenario.php?id=".$escrever['idCENARIOS']." method=post>
+                 <input name=portDescricao  type=hidden value=" .$escrever['PORT_DESCRICAO'].">
+                 <input name=ingDescricao type=hidden value=" .$escrever['ING_DESCRICAO']. ">
+                
+                <button  class=btn btn-outline-success >Editar</button>
+               </form>
+
+
+</td>";
+
+          
+echo "</tr>";
 }/*Fim do while*/
 
 echo "</table>"; /*fecha a tabela apos termino de impressão das linhas*/
@@ -202,14 +232,13 @@ echo "
 ";
 
 
-
-
 ?>
+</table>
 <div class="form-group">
   <label class="col-md-4 control-label" for="idConfirmar"></label>
   <div class="col-md-8">
   <a href= "../manter_cenario.php" class="btn btn-primary"> Adicionar Cenario </a>
-  <a href="javascript:window.history.go(-1)">
+  <a href="../administrador.php">
                     <button type="button" class="btn btn-danger">Voltar</button>
                 </a>
        
@@ -220,4 +249,3 @@ echo "
 </body>
 </html>
 
-</html>

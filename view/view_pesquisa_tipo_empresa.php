@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 
+
 <html>
 <head>
 
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
   <!-- Bootstrap 3.3.7 -->
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
   <!-- Font Awesome -->
@@ -40,6 +44,18 @@
 <script src="dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
+<!-- Link da Tradução Dos Idiomas Ingles/Portugues API GOOGLE-->
+		<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'pt', includedLanguages: 'en,es,pt', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+		<script type="text/javascript" src="http://cdn.howcode.org/content/static/javascript/jquery.min.js"></script>
+		<script src="http://cdn.howcode.org/content/static/javascript/jquery.cookie.js"></script>	
+ <style type="text/css">
+ .goog-te-banner-frame.skiptranslate{display:none!important;}body{top:0px!important;}
+ 
+ </style>
 <?php
 session_start();
 
@@ -187,10 +203,26 @@ while($escrever=mysqli_fetch_assoc($result)){
 /*Escreve cada linha da tabela*/
 
 echo "<tr><td>" . $escrever['PORT_NOME'] . "</td><td>" . $escrever['PORT_DESCRICAO'] . "</td><td>". $escrever['ING_NOME'] . "</td><td>" . $escrever['ING_DESCRICAO'] . "</td><td>"  ;
-echo "  <td><a href=../TipoEmpresaController.php?acao=editar&id=".$escrever['idTIPO_EMPRESA']." class=btn btn-outline-success >Editar</a></td>
-            <td><a  href =../TipoEmpresaController.php?acao=excluir&id=".$escrever['idTIPO_EMPRESA']."   class= btn btn-outline-danger >Excluir</a></td>";
 
-}/*Fim do while*/
+
+echo "<td><a class=btn btn-outline-success href =../TipoEmpresaController.php?acao=excluir&id=".$escrever['idTIPO_EMPRESA'].">Excluir</a></td>";
+
+echo "  <td>
+  <form action=view_editar_tipo_empresa.php?id=".$escrever['idTIPO_EMPRESA']." method=post>
+                 <input name=portDescricao  type=hidden value=" .$escrever['PORT_DESCRICAO'].">
+                 <input name=ingDescricao type=hidden value=" .$escrever['ING_DESCRICAO']. ">
+				  <input name=ingNome type=hidden value=" .$escrever['ING_NOME']. ">
+				   <input name=portNome type=hidden value=" .$escrever['PORT_NOME']. ">
+                
+                <button class=btn btn-outline-success >Editar</button>
+               </form>
+
+
+</td>";
+echo "</tr>";
+
+}
+/*Fim do while*/
 
 echo "</table>"; /*fecha a tabela apos termino de impressão das linhas*/
 
@@ -211,7 +243,7 @@ echo "
   <label class="col-md-4 control-label" for="idConfirmar"></label>
   <div class="col-md-8">
   <a href= "../manter_tipo_empresa.php" class="btn btn-primary"> Adicionar Tipo Empresa </a>
-  <a href="javascript:window.history.go(-1)">
+  <a href="../administrador.php">
                     <button type="button" class="btn btn-danger">Voltar</button>
                 </a>
        

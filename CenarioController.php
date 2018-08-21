@@ -26,8 +26,8 @@ if(isset($_POST['id'])){
  
  if($acao =='manterCenario'){
 	//$cenarios = null;
-	 $nomePort = $_POST['cenarioPort'];
-     $nomeIng = $_POST['cenarioIng'];
+	 $nomePort =addslashes( $_POST['cenarioPort']);
+     $nomeIng = addslashes($_POST['cenarioIng']);
 	 
 	 $cenario = new Cenario($nomePort,$nomeIng);
 	 $cenario ->setNomePort($nomePort);
@@ -59,12 +59,12 @@ if(isset($_POST['id'])){
  }
  if($acao =='manterCenarioEditar'){
 	//$cenarios = null;
-	 $nomePort = $_POST['cenarioPort'];
-     $nomeIngl = $_POST['cenarioIng'];
+	 $nomePort = addslashes($_POST['cenarioPort']);
+     $nomeIngl = addslashes($_POST['cenarioIng']);
 	 
 	  $cenarioDao = new CenarioDao();
-	  $ex= '16';
-	 $cenarioDao ->editarTipo ($id,$nomePort,$nomeIngl);
+	  
+	 $cenarioDao ->editarCenario ($id,$nomePort,$nomeIngl);
 	 
 	// $cenarios = $cenarioDao ->listaCenarios();
 	 header('Location:view/view_pesquisa_cenario.php');

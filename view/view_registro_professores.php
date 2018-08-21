@@ -16,7 +16,18 @@ require_once("view_acesso_direto_administrador");
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom fonts for this template-->
   <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-  
+  <!-- Link da Tradução Dos Idiomas Ingles/Portugues API GOOGLE-->
+		<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'pt', includedLanguages: 'en,es,pt', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+		<script type="text/javascript" src="http://cdn.howcode.org/content/static/javascript/jquery.min.js"></script>
+		<script src="http://cdn.howcode.org/content/static/javascript/jquery.cookie.js"></script>	
+ <style type="text/css">
+ .goog-te-banner-frame.skiptranslate{display:none!important;}body{top:0px!important;}
+ 
+ </style>
   <!-- Custom styles for this template-->
 </head>
 

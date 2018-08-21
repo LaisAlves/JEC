@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
 <head>
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -57,7 +58,18 @@
 <script src="dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
-
+<!-- Link da Tradução Dos Idiomas Ingles/Portugues API GOOGLE-->
+		<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'pt', includedLanguages: 'en,es,pt', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+		<script type="text/javascript" src="http://cdn.howcode.org/content/static/javascript/jquery.min.js"></script>
+		<script src="http://cdn.howcode.org/content/static/javascript/jquery.cookie.js"></script>	
+ <style type="text/css">
+ .goog-te-banner-frame.skiptranslate{display:none!important;}body{top:0px!important;}
+ 
+ </style>
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -158,7 +170,7 @@ if(!empty($_SESSION['id'])){
           <!-- Control Sidebar Toggle Button opção que vida do lado do login -->
 		  
           <li>
-            <a href="index.php">
+            <a href="../index.php">
 			
 			Home
 			

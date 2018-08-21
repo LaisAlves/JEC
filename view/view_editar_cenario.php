@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
 <head>
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -57,21 +58,26 @@
 <script src="dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
+<!-- Link da Tradução Dos Idiomas Ingles/Portugues API GOOGLE-->
+		<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'pt', includedLanguages: 'en,es,pt', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+		<script type="text/javascript" src="http://cdn.howcode.org/content/static/javascript/jquery.min.js"></script>
+		<script src="http://cdn.howcode.org/content/static/javascript/jquery.cookie.js"></script>	
+ <style type="text/css">
+ .goog-te-banner-frame.skiptranslate{display:none!important;}body{top:0px!important;}
+ 
+ </style>
 
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
-
-  <!-- Google Font -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-<!------ Include the above in your HEAD tag ---------->
-  <?php
+<?php
 session_start();
 
 require_once 'view_acesso_direto_administrador.php';
+
+	
+	
 /*
 if ( $_SESSION['tipo']!='administrador') {
     return header('Location: view_login.php');
@@ -128,9 +134,6 @@ if ( $_SESSION['tipo']!='administrador') {
 if(!empty($_SESSION['id'])){
   echo "Olá ".$_SESSION['nome'].", Bem vindo <br>";
   
-}else{
-  $_SESSION['msg'] = "Área restrita";
-  header("Location: login.php");  
 }
 ?>
 
@@ -169,6 +172,9 @@ if(!empty($_SESSION['id'])){
     </nav>
   </header>
   <?php
+  
+
+  
   if(isset($_GET['id'])){
 	$id = $_GET['id'];
 }
@@ -176,6 +182,19 @@ if(!empty($_SESSION['id'])){
 if(isset($_POST['id'])){
 	$id = $_POST['id'];
 }
+
+// PEGAR DADOS DO CENARIO DE ACORDO COM UM ID
+  //include("../dao/dao_cenario.php");
+  
+ // $cenarioDao = new CenarioDao();
+  //$dadosCenario = $cenarioDao->retornaCenario($id);
+ 
+            //Recebe os dados a serem editados
+           
+            $descricaoPort = filter_input(INPUT_POST, 'portDescricao');
+           $descricaoIng = filter_input(INPUT_POST, 'ingDescricao');
+        
+
 echo "<form class= form-horizontal method=post action=../CenarioController.php?acao=manterCenarioEditar&id=".$id;
 echo ">"
 
@@ -184,13 +203,15 @@ echo ">"
 <br><br>
 <div class="container">
 <!-- Form Name -->
-<legend>Cadastro de Cenário</legend>
+<legend>Editar de Cenário</legend>
 </div>
 <!-- Text input-->
 <div class="form-group">
+
+
   <label class="col-md-4 control-label" for="idNomeCenario">Nome do Cenario em Português</label>  
   <div class="col-md-5">
-  <input id="cenarioPort" name="cenarioPort" type="text" placeholder="Nome do Cenário em português" class="form-control input-md" required="">
+  <input id="cenarioPort" name="cenarioPort" value = "<?php echo $descricaoPort ?>" type="text"  class="form-control input-md" required="">
     
   </div>
 </div>
@@ -200,7 +221,7 @@ echo ">"
 <div class="form-group">
   <label class="col-md-4 control-label" for="idCenario">Nome do Cenario em Inglês</label>  
   <div class="col-md-5">
-  <input id="cenarioIng" name="cenarioIng" type="text" placeholder="Name of the scenario" class="form-control input-md" required="">
+  <input id="cenarioIng" name="cenarioIng" value = "<?php echo $descricaoIng ?>" type="text" class="form-control input-md" required="">
     
   </div>
 </div>

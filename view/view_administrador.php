@@ -1,16 +1,4 @@
 <!DOCTYPE html>
- <?php
-
-
-require_once 'view_acesso_direto_administrador.php';
-require_once 'dao/dao_acesso.php';
-
-$pagina = "1";
-$id="1";
-$acessoDao = new AcessoDao();
-$acessoDao->Adiciona($pagina,$id);
-
-?>
 <html>
 <head>
   <?php
@@ -65,6 +53,19 @@ if ( $_SESSION['tipo']!='administrador') {
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
+
+<!-- Link da Tradução Dos Idiomas Ingles/Portugues API GOOGLE-->
+		<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'pt', includedLanguages: 'en,es,pt', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+		<script type="text/javascript" src="http://cdn.howcode.org/content/static/javascript/jquery.min.js"></script>
+		<script src="http://cdn.howcode.org/content/static/javascript/jquery.cookie.js"></script>	
+ <style type="text/css">
+ .goog-te-banner-frame.skiptranslate{display:none!important;}body{top:0px!important;}
+ 
+ </style>
 
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">

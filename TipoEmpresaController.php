@@ -24,11 +24,11 @@ if(isset($_POST['id'])){
  
  if($acao =='manterTipoEmpresa'){
 	//$cenarios = null;
-	 $nomePort = $_POST['idNomePort'];
-     $nomeIng = $_POST['idNomeIng'];
+	 $nomePort = addslashes($_POST['idNomePort']);
+     $nomeIng = addslashes($_POST['idNomeIng']);
 	 
-	 $descricaoPort = $_POST['idDescricaoPort'];
-     $descricaoIng = $_POST['idDescricaoIng'];
+	 $descricaoPort = addslashes($_POST['idDescricaoPort']);
+     $descricaoIng = addslashes($_POST['idDescricaoIng']);
 	 
 	 $tipoEmpresa = new TipoEmpresa($nomePort,$nomeIng);
 	 $tipoEmpresa ->setNomePort($nomePort);
@@ -64,10 +64,11 @@ if(isset($_POST['id'])){
  }
  if($acao =='manterTipoEmpresaEditar'){
 	//$cenarios = null;
-	 $nomePort = $_POST['idNomePort'];
-     $nomeIngl = $_POST['idNomeIng'];
-	 $descricaoPort= $_POST['idDescricaoPort'];
-	 	 $descricaoIng= $_POST['idDescricaoIng'];
+	//addslashes -> Tratamento de Strings em PHP
+	 $nomePort = addslashes($_POST['idNomePort']);
+     $nomeIngl = addslashes($_POST['idNomeIng']);
+	 $descricaoPort=addslashes($_POST['idDescricaoPort']);
+	 	 $descricaoIng= addslashes($_POST['idDescricaoIng']);
 	 
 	  $TipoEmpresaDao = new TipoEmpresaDao();
 	  $ex= '16';

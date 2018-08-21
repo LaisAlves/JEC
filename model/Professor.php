@@ -1,9 +1,9 @@
 <?php
 class Professor{
 	private $nome;
-	private $usuario;
+	private $email;
 	private $senha;
-	private $nivel;
+	
 	
 	public function getNome(){
 		return $this ->nome;
@@ -14,13 +14,13 @@ class Professor{
 		$this->nome = $nome;
 	}
 	
-	public function getUsuario(){
-		return $this ->usuario;
+	public function getEmail(){
+		return $this ->email;
 	}
 	
-	public function setUsuario($usuario){
+	public function setEmail($email){
 		
-		$this->usuario = $usuario;
+		$this->email = $email;
 	}
 	
 	public function getSenha(){
@@ -31,17 +31,6 @@ class Professor{
 		
 		$this->senha = $senha;
 	}
-	public function getNivel(){
-		return $this ->nivel;
-	}
-	
-	public function setNivel($nivel){
-		
-		$this->nivel = $nivel;
-	}
-	
-	
-	
 	
 	
 	

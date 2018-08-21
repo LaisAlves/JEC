@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
 <head>
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -57,17 +58,19 @@
 <script src="dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
+<!-- Link da Tradução Dos Idiomas Ingles/Portugues API GOOGLE-->
+		<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'pt', includedLanguages: 'en,es,pt', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+		<script type="text/javascript" src="http://cdn.howcode.org/content/static/javascript/jquery.min.js"></script>
+		<script src="http://cdn.howcode.org/content/static/javascript/jquery.cookie.js"></script>	
+ <style type="text/css">
+ .goog-te-banner-frame.skiptranslate{display:none!important;}body{top:0px!important;}
+ 
+ </style>
 
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
-
-  <!-- Google Font -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-<!------ Include the above in your HEAD tag ---------->
   <?php
 
 session_start();
@@ -169,6 +172,7 @@ if(!empty($_SESSION['id'])){
     </nav>
   </header>
    <?php
+   $id=null;
   if(isset($_GET['id'])){
 	$id = $_GET['id'];
 }
@@ -176,6 +180,17 @@ if(!empty($_SESSION['id'])){
 if(isset($_POST['id'])){
 	$id = $_POST['id'];
 }
+
+
+ //Recebe os dados a serem editados
+           
+            $descricaoPort = filter_input(INPUT_POST, 'portDescricao');
+           $descricaoIng = filter_input(INPUT_POST, 'ingDescricao');
+		   
+            $nomePort = filter_input(INPUT_POST, 'portNome');
+           $nomeIng = filter_input(INPUT_POST, 'ingNome');
+
+
 echo "<form class= form-horizontal method=post action=../TipoEmpresaController.php?acao=manterTipoEmpresaEditar&id=".$id;
 echo ">"
 
@@ -184,13 +199,13 @@ echo ">"
 <br><br>
 <div class="container">
 <!-- Form Name -->
-<legend>Cadastro de Tipos de Empresas</legend>
+<legend>Editar Tipo de Empresa</legend>
 </div>
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="idNomeEmpresa">Nome da Empresa Em Português</label>  
   <div class="col-md-5">
-  <input id="idNomePort" name="idNomePort" type="text" placeholder="Nome da empresa" class="form-control input-md" required="">
+  <input id="idNomePort" name="idNomePort" type="text" placeholder="Nome da empresa" value = "<?php echo $nomePort ?>" class="form-control input-md" required="">
     
   </div>
 </div>
@@ -198,7 +213,7 @@ echo ">"
 <div class="form-group">
   <label class="col-md-4 control-label" for="idNomeEmpresa">Descrição Em Português</label>  
   <div class="col-md-5">
-  <input id="idDescricaoPort" name="idDescricaoPort" type="text" placeholder="Descricao da empresa" class="form-control input-md" required="">
+  <input id="idDescricaoPort" name="idDescricaoPort" type="text" placeholder="Descricao da empresa" value = "<?php echo $descricaoPort ?>"  class="form-control input-md" required="">
     
   </div>
 </div>
@@ -209,14 +224,14 @@ echo ">"
 <div class="form-group">
   <label class="col-md-4 control-label" for="idDescricao">Nome da Empresa Em Inglês</label>  
   <div class="col-md-5">
-  <input id="idNomeIng" name="idNomeIng" type="text" placeholder="company name in english" class="form-control input-md" required="">
+  <input id="idNomeIng" name="idNomeIng" type="text" placeholder="company name in english" value = "<?php echo $nomeIng ?>"  class="form-control input-md" required="">
     
   </div>
 </div>
 <div class="form-group">
   <label class="col-md-4 control-label" for="idNomeEmpresa">Descrição Em Inglês</label>  
   <div class="col-md-5">
-  <input id="idDescricaoIng" name="idDescricaoIng" type="text" placeholder="company description" class="form-control input-md" required="">
+  <input id="idDescricaoIng" name="idDescricaoIng" type="text" placeholder="company description" value = "<?php echo $descricaoIng ?>" class="form-control input-md" required="">
     
   </div>
 </div>

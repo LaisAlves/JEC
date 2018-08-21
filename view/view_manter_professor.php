@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
 <head>
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -57,6 +58,18 @@
 <script src="dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
+<!-- Link da Tradução Dos Idiomas Ingles/Portugues API GOOGLE-->
+		<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'pt', includedLanguages: 'en,es,pt', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+		<script type="text/javascript" src="http://cdn.howcode.org/content/static/javascript/jquery.min.js"></script>
+		<script src="http://cdn.howcode.org/content/static/javascript/jquery.cookie.js"></script>	
+ <style type="text/css">
+ .goog-te-banner-frame.skiptranslate{display:none!important;}body{top:0px!important;}
+ 
+ </style>
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -188,9 +201,9 @@ if(!empty($_SESSION['id'])){
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="idUsuario">Usuário</label>  
+  <label class="col-md-4 control-label" for="idUsuario">E-mail</label>  
   <div class="col-md-5">
-  <input id="idUsuario" name="idUsuario" type="text" placeholder="Login do Professor" class="form-control input-md" required="">
+  <input id="idEmail" name="idEmail" type="text" placeholder="E-mail do Professor" class="form-control input-md" required="">
     
   </div>
 </div>
@@ -205,23 +218,16 @@ if(!empty($_SESSION['id'])){
 </div>
 
 <!-- Select Basic -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="idTipo">Nível</label>
-  <div class="col-md-5">
-    <select id="idTipo" name="idTipo" class="form-control">
-      <option value="1">Professor</option>
-      
-    </select>
-  </div>
-</div>
+
 
 <!-- Button (Double) -->
 <div class="form-group">
   <label class="col-md-4 control-label" for="idConfirmar"></label>
   <div class="col-md-8">
   <td colspan="2"><input type='submit'class="btn btn-primary"></td>
-    <button id="idConfirmar" name="idConfirmar" class="btn btn-primary">confirmar</button>
-	<a href= "administrador.php" class="btn btn-danger"> Voltar </a>
+   <a href="javascript:window.history.go(-1)">
+                    <button type="button" class="btn btn-danger">Voltar</button>
+                </a>
   </div>
 </div>
 

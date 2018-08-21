@@ -1,9 +1,10 @@
 <?php
 class Empresa{
 	private $nome;
-	private $descricao;
+	private $empresa;
+	private $cenario;
 	
-	public function getNome(){
+	public  function getNome(){
 		return $this ->nome;
 	}
 	
@@ -12,15 +13,25 @@ class Empresa{
 		$this->nome = $nome;
 	}
 	
-	public function getDescricao(){
-		return $this ->descricao;
+	public function getEmpresa(){
+		return $this ->empresa;
 	}
 	
-	public function setDescricao($descricao){
+	public function setEmpresa($empresa){
 		
-		$this->descricao = $descricao;
+		
+		$this->empresa = $empresa;
 	}
 	
+	
+	public function getCenario(){
+		return $this -> cenario;
+	}
+	
+	public function setCenario($cenario){
+		
+		$this->cenario =$cenario;
+	}
 	
 	
 	
