@@ -48,8 +48,8 @@ $query = "INSERT INTO tipo_empresa (PORT_NOME,PORT_DESCRICAO,ING_NOME,ING_DESCRI
 	   $database = new Database();
 	 $conexao = $database->Conectar();
     //  $sql = "DELETE FROM tipo_empresa WHERE idTIPO_EMPRESA = :id";
-	  
-	 $sql= "DELETE FROM empresas,tipo_empresa WHERE empresas.TIPO_EMPRESA_idTIPO_EMPRESA AND tipo_empresa.id_TIPO_EMPRESA=:id";
+	  $sql = "DELETE FROM tipo_empresa WHERE idTIPO_EMPRESA = :id";
+	// $sql= "DELETE FROM empresas,tipo_empresa WHERE empresas.TIPO_EMPRESA_idTIPO_EMPRESA AND tipo_empresa.id_TIPO_EMPRESA=:id";
   $conexao ->beginTransaction();
   
   

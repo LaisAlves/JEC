@@ -236,7 +236,7 @@ $resultado = mysqli_query($conn,$query);
 
 
   </div>
-				  
+<!-- Text input	  
 <script>
 function getValue(){
 	 var valor = document.getElementById("idCenario").value;
@@ -248,7 +248,7 @@ function getValue(){
 
 
 </script>
-
+-->			
   </div>
 </div>
 
