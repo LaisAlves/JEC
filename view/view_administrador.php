@@ -231,6 +231,18 @@ if(!empty($_SESSION['id'])){
             
           </ul>
         </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-line-chart"></i> <span>Variáveis</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="view/view_cadastrar_variaveis.php"><i class="fa fa-circle-o"></i>Cadastrar Variáveis</a></li>
+            
+          </ul>
+        </li>
         
         
             </ul>

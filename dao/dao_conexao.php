@@ -1,8 +1,14 @@
 <?php
-	$servidor = "localhost";
-	$usuario = "root";
-	$senha = "";
-	$dbname = "mydb";
+		 /*
+		$servidor = "localhost";
+		$usuario = "id6128871_jec";
+		$senha = "projetojec2018if";
+		$dbname = "id6128871_mydb";
+		*/
+		$servidor = "localhost";
+		$usuario = "root";
+		$senha = "";
+		$dbname = "mydb";
 	
 	//Criar a conexao
 	 $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
@@ -26,10 +32,16 @@
   }
   
    function conexao(){
-   $servidor = "localhost";
-	$usuario = "root";
-	$senha = "";
-	$dbname = "mydb";
+		 /*
+		$servidor = "localhost";
+		$usuario = "id6128871_jec";
+		$senha = "projetojec2018if";
+		$dbname = "id6128871_mydb";
+		*/
+		$servidor = "localhost";
+		$usuario = "root";
+		$senha = "";
+		$dbname = "mydb";
 	  $con = null;
 	  $con = mysqli_connect($servidor, $usuario, $senha, $dbname);
 	  

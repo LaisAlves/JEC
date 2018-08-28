@@ -2,11 +2,16 @@
 
 class Database{
 	
-	
-	private $servidor = "localhost";
-		private  $usuario = "root";
-		private $senha = "";
-		private $dbname = "mydb";
+    /*
+    private $servidor = "localhost";
+	private  $usuario = "id6128871_jec";
+	private $senha = "projetojec2018if";
+    private $dbname = "id6128871_mydb";
+    */
+    private $servidor = "localhost";
+	private  $usuario = "root";
+	private $senha = "";
+    private $dbname = "mydb";
 	private $port = "3306";
 	private $Connect = null;
     
