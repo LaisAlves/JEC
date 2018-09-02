@@ -239,7 +239,7 @@ if(!empty($_SESSION['id'])){
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="view/view_cadastrar_variaveis.php"><i class="fa fa-circle-o"></i>Cadastrar Variáveis</a></li>
+            <li><a href="cadastrar_variaveis.php"><i class="fa fa-circle-o"></i>Cadastrar Variáveis</a></li>
             
           </ul>
         </li>

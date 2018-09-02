@@ -60,11 +60,11 @@
 
         <div class="card-header">Área de cadastro</div>
             <div class="card-body">
-                <form name = "signup" method="POST" action="cadastrando_variaveis.php?idioma= $_GET['idioma']">
+                <form name = "signup" method="POST" action="efetuar_cadastro_variaveis.php?idioma= $_GET['idioma']">
             <div class="form-group">
                 <label>Tipo de Variável</label><br>
-                    <input type="radio" name="tipo" />Interna<br>
-                    <input type="radio" name="tipo" />Externa<br>
+                    <input type="radio" name="tipo" value="Interna"/>Interna<br>
+                    <input type="radio" name="tipo" value="Externa"/>Externa<br>
             </div>
             <div class="form-group">
                 <label>Nome em português</label><br>
@@ -76,8 +76,8 @@
             </div>
             <div class="form-group">
                 <label>Visibilidade</label><br>
-                    <input type="radio" name="visibilidade" />Sim<br>
-                    <input type="radio" name="visibilidade"/>Não<br>
+                    <input type="radio" name="visibilidade" value="Visivel"/>Sim<br>
+                    <input type="radio" name="visibilidade" value="Invisivel"/>Não<br>
             </div>
             <input type="submit" class="btn btn-primary btn-block" name="submit" value="Cadastrar"/>
         </form>
